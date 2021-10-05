@@ -4,29 +4,80 @@
   display: flex;
   border:1px solid red;
   flex-direction:row ;
-  flex-wrap:wrap;
-  /* 
-    - 单行：align-items: flex-end;
-		- 顶部对齐：flex-start;
-		- 居中对齐：center;
-		- 两边顶：stretch;(默认值)注意得是无高度规定的情况下
-		- 底部对齐：flex-end
-	- 多行
-		- 默认：行与行多余的空隙平均分
-		- flex-start;往上顶
-		- flex-end;往下顶
-		- center;多余的行高放两边
-		- stretch;让多余的空间平均分
-		- “两端对齐”：space-between 将中间的两边放在空位
-		- “分散对齐”：space-around 元素空出来的空间中，第一个元素前的空间=最后一个元素后的空间；剩下其余非元素的空间相等
-   */
-  
-  height: 400px;
-  align-content: flex-start;
+  flex-wrap:nowrap;
 }
 .item{
-  width: 50px;
   height:50px;
   border:1px solid green;
+  /*flex-grow: 1;
+  - （没有设置width的情况下）能有多宽有多宽
+  - 设置为0，默认不区分
+  - 例如：导航布局（0，1，0），两边能多窄就多窄，中间宽
+  */
+ /*控制基准宽度，默认是auto
+  flex-basis: 100px;
+ */
 }
+.item:first-child{
+height: 200px;
 
+}
+.item:nth-child(2){
+height: 150px;
+}
+.item:nth-child(3){
+height: 50px;
+/*align-self可以让某个元素特立独行*/
+align-self: flex-end;
+} 
+/* flex-shrink: 0;
+- 有宽度的情况！！！下瘦得更快，默认是1，0是不让缩小
+- 简写：
+	- A：flex-grow: 1;（width: 100px;情况下）
+	- B：flex-shrink: 0;（width: 100px;情况下）
+	- A、B等价于flex: 1 0 100px;
+.item:first-child{
+flex-grow: 1;
+flex-shrink: 0;
+}
+.item:nth-child(2){
+flex-grow: 1;
+flex-shrink: 100;
+}
+.item:nth-child(3){
+flex-grow: 1;
+flex-shrink: 0;
+} 
+*/
+/*2、flex-grow: 1;
+- （没有设置width的情况下！！！）能有多宽有多宽
+- 设置为0，默认不区分
+- 例如：导航布局（0，1，0），两边能多窄就多窄，中间宽
+.item:frist-child{
+flex-grow: 0;
+}
+.item:nth-child(2){
+flex-grow: 1;
+}
+.item:nth-child(3){
+flex-grow: 0;
+}
+*/
+
+/*1、order:表排列
+.item:frist-child{
+	order: 100;
+}
+.item:nth-child(2){
+	order: 2;
+}
+.item:nth-child(3){
+	order: 3;
+}
+.item:nth-child(4){
+	order: 4;
+}
+.item:last-child{
+	order: 1;
+}
+*/
