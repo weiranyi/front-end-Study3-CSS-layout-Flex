@@ -1,0 +1,35 @@
+/*1、让一个元素变成container容器*/
+.container{
+  display: flex;
+  /* display: inline-flex; 
+  类似于block和inline-block的区别，一般不使用
+  */
+  border:1px solid red;
+  /*2、改变流动方向（主轴方向）
+  - 默认：row，若不做判断一行有多少空间就挤多少
+  - 从右向左：row-reverse
+  - 竖排：column
+  - 从下往上：column-reverse
+  */
+  flex-direction:row ;
+  /*3、是否换行
+  - 默认：nowrap
+  - wrap-reverse，从底部开始向上折行
+  */
+  flex-wrap:wrap;
+  /* 4、对齐方式 
+  - 默认：左对齐flex-start
+  - 右对齐：flex-end
+  - 居中对齐：center
+  - “两端对齐”：space-between 将中间的两边放在空位
+  - “分散对齐”：space-around 元素空出来的空间中，第一个元素前的空间=最后一个元素后的空间；剩下其余非元素的空间相等
+  - space-evenly：让每个元素外空出来的空间相等
+  */
+  justify-content:space-around;
+}
+.item{
+  width: 50px;
+  height:50px;
+  border:1px solid green;
+}
+
