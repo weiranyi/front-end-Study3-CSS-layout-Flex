@@ -1,3 +1,4 @@
+/*一、主轴方向（从左到右、从右向左，从上到下、由下至上）*/
 /*1、让一个元素变成container容器*/
 .container{
   display: flex;

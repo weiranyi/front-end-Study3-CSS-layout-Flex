@@ -1,0 +1,32 @@
+/*二、次轴方向*/
+/*1、让一个元素变成container容器*/
+.container{
+  display: flex;
+  border:1px solid red;
+  flex-direction:row ;
+  flex-wrap:wrap;
+  /* 
+    - 单行：align-items: flex-end;
+		- 顶部对齐：flex-start;
+		- 居中对齐：center;
+		- 两边顶：stretch;(默认值)注意得是无高度规定的情况下
+		- 底部对齐：flex-end
+	- 多行
+		- 默认：行与行多余的空隙平均分
+		- flex-start;往上顶
+		- flex-end;往下顶
+		- center;多余的行高放两边
+		- stretch;让多余的空间平均分
+		- “两端对齐”：space-between 将中间的两边放在空位
+		- “分散对齐”：space-around 元素空出来的空间中，第一个元素前的空间=最后一个元素后的空间；剩下其余非元素的空间相等
+   */
+  
+  height: 400px;
+  align-content: flex-start;
+}
+.item{
+  width: 50px;
+  height:50px;
+  border:1px solid green;
+}
+
